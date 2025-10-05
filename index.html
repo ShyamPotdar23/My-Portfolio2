@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shyam's Professional Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <a href="#about">About Me</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+  <button class="toggle-dark">🌙</button>
+</nav>
+
+<!-- About Me -->
+<section id="about" class="fade-in">
+  <div>
+    <img src="image.png" alt="profile Image" height="1000px" width="10px">
+  </div>
+  <div>
+    <h1>Hi, I'm Shyam</h1>
+    <p>I am a passionate Computer Science student and aspiring full-stack developer. I enjoy building creative and professional web applications, learning new technologies, and solving real-world problems. My goal is to grow as a software engineer and contribute to impactful projects.</p>
+  </div>
+</section>
+
+<!-- Skills -->
+ <h1 id="S"><b>SKILLS</b></h1>
+<section id="skills" class="fade-in">
+  <div class="skill">HTML</div>
+  <div class="skill">CSS</div>
+  <div class="skill">JavaScript</div>
+  <div class="skill">C</div>
+  <div class="skill">JAVA</div>
+  <div class="skill">Git/GitHub</div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="fade-in">
+  <div class="project">
+    <img src="image1.png"alt="Project 1" ><a href="project1.html">Click here to kn more</a>
+    <div class="desc">
+      <h3>Solar System</h3>
+      <p>A fully designed Solar System formed by HTML and CSS showcasing my skills and projects.</p>
+    </div>
+  </div>
+  <div class="project">
+    <img src="image2.png" alt="Project 2"><a href="project2.html">Click here to kn more</a>
+    <div class="desc">
+      <h3>Live Crypto Tracker</h3>
+      <p>This project gives u the price of crypto currencies of real time world formed with HTML, CSS and JS.</p>
+    </div>
+  </div>
+  <div class="project">
+    <img src="image3.png" alt="Project 3"><a href="project3.html">Click here to kn more</a>
+    <div class="desc">
+      <h3>Ferris wheel</h3>
+      <p>This project gives the animation of ferris wheel formed with HTML and CSS</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Me -->
+<section id="contact" class="fade-in">
+  <div>
+    <h2>Contact Me</h2>
+    <p><b>Feel free to reach out for collaborations or just a friendly hello!</p></b>
+    <p><b>Email: shyamdpotdar@gmail.com</p></b>
+    <p><b>Phone: +91 6355538253</p></b>
+  </div>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<script>
+  // Dark/Light mode toggle
+  const toggle = document.querySelector('.toggle-dark');
+  toggle.addEventListener('click', () => { document.body.classList.toggle('dark'); });
+
+  // Scroll animations
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); appearOnScroll.unobserve(entry.target); } });
+  }, appearOptions);
+
+  faders.forEach(fader => { appearOnScroll.observe(fader); });
+</script>
+
+</body>
+</html>
